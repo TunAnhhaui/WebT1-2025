@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nhập số thứ nhất:</td>
+            <td><input type="text" id="A"></td>
+        </tr>
+        <tr>
+            <td>Nhập số thứ hai:</td>
+            <td><input type="text" id="B"></td>
+        </tr>
+        <tr>
+            <td>Ước chung lớn nhất:</td>
+            <td><input type="text" id="kq"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button onclick="myF()">Tìm</button>
+            <button onclick="reset()">Hủy bỏ</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function myF(){
+            var num1=document.getElementById("A").value;
+            var num2=document.getElementById("B").value;
+            var ucln;
+            if(num1==0 || num2==0){
+                ucln=num1+num2;
+            }
+            else{
+                while(num1!=num2){
+                    if(num1> num2) num1=num1-num2;
+                    else num2=num2-num1
+                }
+                ucln=num1;
+            }
+            document.getElementById('kq').value=ucln;
+        }
+        function reset(){
+            document.getElementById('A').value=' ';
+            document.getElementById('B').value=' ';
+            document.getElementById('kq').value=' ';
+        }
+    </script>
+</body>
+</html>

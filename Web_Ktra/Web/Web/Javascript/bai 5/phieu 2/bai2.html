@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="input"></div>
+
+        <button class="item">1</button>
+        <button class="item">2</button>
+        <button class="item">3</button>
+        <button class="item" style="background-color: rgb(255, 126, 227); cursor: pointer;"><a href="./bai2.html" style="color: rgb(36, 36, 36); text-decoration: none;">AC</a></button>
+        <br>
+        <button class="item">4</button>
+        <button class="item">5</button>
+        <button class="item">6</button>
+        <button class="item">+</button>
+        <br>
+        <button class="item">7</button>
+        <button class="item">8</button>
+        <button class="item">9</button>
+        <button class="item">=</button>
+        </div>
+        </div>
+        <br>
+
+    <script>
+        let input = document.querySelector('.input');
+        let items = Array.from(document.querySelectorAll('.item'));
+        items.forEach(function(btn){
+            btn.addEventListener('click',function(){
+                if(btn.innerHTML=='='){
+                    input.innerHTML=eval(input.innerHTML);
+                }
+                else{
+                    input.innerHTML+=btn.innerHTML;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

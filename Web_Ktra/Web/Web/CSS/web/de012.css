@@ -1,0 +1,161 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+}
+.header img{
+    width: 220px;
+    height: 120px;
+}
+.input{
+    margin-left: 300px;
+    width: 400px;
+    height: 50px;
+    margin-top: 30px;
+}
+.header1{
+    padding-left: 400px;
+    display: flex;
+    padding-top: 30px;
+}
+.header2{
+    padding-left: 30px;
+    padding-top: 5px;
+}
+.i{
+    font-size: 30px;
+    /* color: white; */
+    border-radius: 30px;
+    background-color: palevioletred;
+    width: 70px;
+    height: 50px;
+}
+.i i{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+#p1{
+    font-size: 20px;
+}
+#p1:hover{
+    color:#00CC33
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+   
+    height: 40px;
+}
+nav ul li{
+    padding: 0 30px;
+    background-color: rgb(25, 216, 25);
+}
+nav ul li a{
+    text-decoration: none;
+    line-height: 40px;
+    color: white;
+}
+nav ul li:hover{
+    background-color: green;
+
+}
+.input2{
+    margin-left: 120px;
+    width: 300px;
+    height:30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.sub-menu{
+    position: absolute;
+    display: block;
+    top:158px;
+    left: 300px;
+    width: 200px;
+    
+}
+.menu:hover .sub-menu{
+    display: block;
+}
+.sub-menu{
+    position: absolute;
+    display: block;
+    top:158px;
+    left: 300px;
+    display: none;
+}
+.menu:hover .sub-menu{
+    display: block;
+}
+.sub-menu li{
+    border-bottom: 1px solid white;
+}
+.content{
+    margin-top: 30px;
+}
+.content1{
+    width: 25%;
+}
+button{
+    margin-top: 30px;
+    width: 170px;
+    height: 30px;
+    color:green;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: yellow;
+    color:red;
+}
+hr{
+    margin-top: 10px;
+}
+#p2{
+    padding-top: 30px;
+    font-weight: bold;
+}
+#img{
+    margin-top: 30px;
+    width: 300px;
+    height: 100px;
+    border-radius: 40px;
+}
+#img:hover{
+    transform: scale(2,2);
+}
+#img2{
+    width: 300px;
+    height: 100px;
+}
+.p3 , .p4 ,.p5{
+    color: aqua;
+}
+.content{
+    display: flex;
+}
+.content2{
+    display: flex;
+}
+.content3{
+    display: block;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.content3 p{
+    margin-left: 100px;
+}
+.ct3{
+    margin-top: 50px;
+}
+.content3 img{
+    border: 1px solid black;
+}
+.content3 img:hover{
+    transform: scale(2,2);
+}
+.content3 p:hover{
+    color: #006633;
+}

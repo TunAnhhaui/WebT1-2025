@@ -1,0 +1,142 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.address{
+    display: flex;
+    padding-left: 30px;
+}
+.dong{
+    display: flex;
+    padding-left: 300px;
+}
+.header1{
+    display: flex;
+    padding-top: 10px;
+    background-color: red;
+    color:white;
+    line-height: 40px;
+}
+#p{
+    padding: 0 30px;
+}
+.header1 i{
+    padding-top: 10px;
+}
+.header2{
+    display: flex;
+}
+input{
+    margin-left: 100px;
+    width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 30px;
+    border-color: yellow;
+}
+.header234{
+    display: flex;
+}
+.header3 {
+    display: flex;
+    padding-left: 200px;
+    padding-top: 30px;
+    
+}
+.sub3{
+    display: block;
+
+}
+#p1{
+    color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#p2:hover{
+    color: red;
+}
+.header4{
+    display: flex;
+    padding-left: 150px;
+    padding-top: 30px;
+}
+button{
+    background-color: yellow;
+    width: 40px;
+    height: 20px;
+}
+nav{
+    padding-top: 50px;
+    width: 30%;
+}
+nav ul{
+    background-color: #CCCCCC;
+    width:300px;
+}
+nav ul li{
+    list-style-type: none;
+    height: 50px;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:black;
+
+}
+nav ul li a:hover{
+    color: yellow;
+}
+.sub-menu{
+    position: absolute;
+    top:0px;
+    left:300px;
+    display: none;
+}
+.menu{
+    position: relative;
+}
+.menu:hover .sub-menu{
+    display: block;
+}
+.menu li{
+    background-color:beige
+}
+.headct{
+    display: flex;
+}
+.content{
+    display: flex;
+    padding-top: 50px;
+}
+.content1{
+    display: block;
+}
+.content1 img{
+    width:300px;
+    height: 180px;
+}
+.content1 p{
+    padding-left: 50px;
+}
+#p3{
+    color:red;
+}
+#p4{
+    text-decoration: line-through;
+}
+.pt{
+    display: flex;
+}
+.content button{
+    background-color: red;
+    margin-left: 50px;
+    border-color: aliceblue;
+}
+.content1 p:hover{
+    color: red;
+}
+.content3 , .ct{
+    padding-top: 30px;
+    border: 1px solid gray;
+}

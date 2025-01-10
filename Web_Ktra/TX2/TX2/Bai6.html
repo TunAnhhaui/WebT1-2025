@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form name="nhap">
+    <table border="1" bgcolor=" #656abf" align="center">
+        <caption><h4>Tách ID</h4></caption>
+        <tr>
+            <th>Nhập Email: </th>
+            <th><input type="text" name="nhapemail"></th>
+        </tr>
+        <tr>
+            <th>ID là: </th>
+            <th><input type="text" name="id"></th>
+        </tr>
+        <tr>
+            <th colspan="2" >
+                <input type="reset" value="Xóa">
+                <input type="button"  value="Tách" onclick="tachID()">
+            </th>
+        </tr>
+    </table>
+   </form> 
+</body>
+<script>
+function tachID(){
+    var str_e = window.document.nhap.nhapemail.value ; 
+    var arrEmail = str_e.split("@");
+    window.document.nhap.id.value = layid;
+     var layid = arrEmail[0] ; 
+    window.document.nhap.id.value = layid;
+}
+</script>
+</html>

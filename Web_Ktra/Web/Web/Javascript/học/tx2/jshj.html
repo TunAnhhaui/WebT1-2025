@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <script>
+        function tinh(){
+            var socu =document.getElementById('BK').value;
+            var cv=2*r*3.14;
+            var dt=r*r*3.14;
+            document.getElementById('cv').value=cv;
+            
+        }
+    </script>
+    <body>
+        <form>
+            <table>
+                <th colspan="2">TÍNH TIỀN ĐIỆN</th>
+                <tr>
+                    <td>Bán kính:</td>
+                    <td><input type="text" id="BK"></td>
+                </tr>
+
+                <tr>
+                    <td>chu vi:</td>
+                    <td><input type="text" id="cv"></td>
+                </tr>
+
+                <tr>
+                    <td>dien tich:</td>
+                    <td><input type="text" id="dt"></td>
+                </tr>
+
+
+                <tr>
+                    <td><input type="button" value="Tính" onclick="tinh()" &&></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

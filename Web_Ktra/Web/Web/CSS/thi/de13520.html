@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .header1{
+            display: flex;
+            background-image:url(nen.jpg);
+        }
+        #con{
+            padding-left: 200px;
+            padding-top: 20px;
+        }
+        h2{
+            color:#0033cc;
+        }
+        .header2{
+            background-color: #33ccff;
+            height:30px;
+        }
+        .header2 a{
+            padding: 0 40px;
+            text-decoration: none;
+            color: white;
+            line-height: 30px;
+        }
+        .header2 a:hover{
+            background-color: yellow;
+        }
+        input{
+            width: 600px;
+        }
+        nav{
+            width:30%;
+            padding-top: 100px;
+        }
+        nav ul{
+            list-style-type: none;
+            background-color: #33ffff;
+            width: 300px;
+        }
+        nav ul li{
+            height:50px;
+            line-height: 50px;
+            border-bottom:1px solid white;
+            width:auto;
+            padding-left: 15px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color:white;
+        }
+        nav ul li:hover{
+            background-color: yellow;
+        }
+        .sub-menu{
+            position: absolute;
+            top: 0px;
+            left:300px;
+            display: none;
+        }
+        .menu{
+            position: relative;
+        }
+        .menu:hover .sub-menu{
+            display: block;
+        }
+        .section1{
+            display: flex;
+            padding: 20px;
+        }
+        p{
+            text-align: center;
+        }
+        #sc1{
+            border:1px solid black;
+            margin-right: 30px;
+        }
+        .section{
+            display: flex;
+        }
+        .section11{
+            display: block;
+            padding-top: 100px;
+        }
+        #sc1 img:hover{
+           transform: scale(2,2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header1">
+            <img src="logo.jpg" alt="">
+            <div id="con">
+                <h2>BẢO THẠCH MINERALN & PRODUCTION COMPANY LIMITED</h2>
+                <p>Adress: But Phong Village, Lien Son Communue, Kim bang Distric, ha nam province</p>
+            </div>
+        </div>
+        <div class="header2">
+            <a href="">TRANG CHỦ</a>
+            <a href="">SẢN PHẨM</a>
+            <a href="">GIỚI THIỆU</a>
+            <a href="">TIN TỨC</a>
+            <a href="">LIÊN HỆ</a>
+            <input type="text" value="Nhập từ khóa tìm kiếm">
+        </div>
+    </header>
+    <div class="section">
+        <nav>
+        <ul>
+            <li><h3><i class="fa-solid fa-bars"></i>THEO ỨNG DỤNG</h3>
+                <li><a href="">NL ngành thủy hải sản</a></li>
+                <li><a href="">NL ngành sản xuất phân phối</a></li>
+                <li><a href="">Nguyên liệu vật liệu xây dựng</a></li>
+                <li class="menu"><a href="">Các ngành khác</a>
+                   <ul class="sub-menu">
+                       <li><a href="">NL ngành kính</a></li>
+                       <li><a href="">NL ngành luyện kim</a></li>
+                   </ul>
+                </li>
+        </ul>
+    </nav>
+    <div class="section11">
+        <div class="section1">
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>hạt slic loại 2</p>
+        </div>
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>hạt slic loại 1</p>
+        </div>
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>Sỏi cuội tráng bạc</p>
+        </div>
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>Sỏi cuội tráng</p>
+        </div>
+        </div>
+        <div class="section1">
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>Sỏi cuội tự nhiên</p>
+        </div>
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>Sỏi vân mây</p>
+        </div>
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>cát slic</p>
+        </div>
+        <div id="sc1">
+            <img src="logo.jpg" alt="">
+            <p>cát slic</p>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

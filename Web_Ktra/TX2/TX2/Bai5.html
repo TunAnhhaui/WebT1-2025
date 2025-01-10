@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="nhap">
+    <table border="1" align="center">
+        <caption style="background-color: aquamarine;"><h4>Bài tập về chuỗi</h4></caption>
+        <tr>
+            <th>Câu nhập vào: </th>
+            <th><input type="text" name="caunhapvao"></th>
+        </tr>
+        <tr>
+            <th>Số từ: </th>
+            <th><input type="text" name="sotu"></th>
+        </tr>
+        <tr>
+            <th>Câu đã chuẩn hóa: </th>
+            <th><input type="text" name="chuanhoa"></th>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="button" value="Đếm từ" onclick="demTu()">
+                <input type="button" value="Xuất câu" onclick="xuatCau()">
+            </th>
+        </tr>
+    </table>
+    </form>
+</body>
+<script>
+    function demTu()
+    {
+        var str = window.document.nhap.caunhapvao.value;
+        var str_arr1 = str.trim();
+        var  str_arr2 =  str_arr1.replace(/\s+/g, ' ');
+        var str_arr3 = str_arr2.split(" ");
+        //Tách câu thành mảng các từ dựa trên khoảng trắng
+        window.document.nhap.sotu.value = str_arr3.length;
+    }
+
+    function xuatCau() {
+    var str1 = window.document.nhap.caunhapvao.value;
+    var str2 =  str1.trim();
+     //bỏ khoảng trắng ở đầu và cuối câu
+    var  str3 =  str2.replace(/\s+/g, ' ');
+    //Tìm và thay thế tất cả các khoảng trắng liên tục bằng một khoảng trắng duy nhất
+    var str4 = str3.charAt(0).toUpperCase() + str3.slice(1);
+    //charAt : tìm vị trí chữ trong chuỗi
+    //slice : trích chuỗi vs start và end
+     window.document.nhap.chuanhoa.value = str4;
+}
+  
+</script>
+
+</html>

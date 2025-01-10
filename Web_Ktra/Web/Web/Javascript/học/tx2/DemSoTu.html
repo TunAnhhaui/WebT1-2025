@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        header,
+        footer {
+            height: 50px;
+            width: 100%;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h2 {
+            padding-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            background-color: rgb(29, 162, 97);
+            width: 300px;
+        }
+
+        nav ul li {
+            height: 50px;
+            border: 1px solid white;
+            line-height: 50px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: yellow;
+        }
+
+        nav ul li:hover {
+            background-color: red;
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 0px;
+            left: 300px;
+            display: none;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .menu:hover .sub-menu {
+            display: block;
+        }
+
+        section {
+            display: flex;
+        }
+
+        .form {
+            width: 80%;
+            height: 200px;
+            margin-top: 10px;
+            margin-right: 75px;
+            margin-left: 150px;
+            border-radius: 8px;
+            background: blue;
+            color: white;
+        }
+
+        .form form {
+            width: 70%;
+            /* background-color: aqua; */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form form table {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 5px;
+            margin: 8px;
+        }
+
+        .form button {
+            padding: 5px 15px;
+        }
+
+        caption {
+            padding-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>BÀI KIỂM TRA SỐ 2</h2>
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="">Lập trình Java</a></li>
+                <li class="menu"><a href="">Thiết kế Web</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Tài liệu HTML</a></li>
+                        <li><a href="">Tài liệu CSS</a></li>
+                        <li><a href="">Tài liệu Javascipt</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Lập trình C#</a></li>
+                <li><a href="">Lập trình Web</a></li>
+                <li><a href="">Lập trình hướng đối tượng</a></li>
+                <li><a href="">Cơ sở dữ liệu</a></li>
+            </ul>
+        </nav>
+        <div class="form">
+            <form action="">
+                <table border="0">
+                    <caption>
+                        <h3>ĐẾM SỐ TỪ TRONG CÂU</h3>
+                    </caption>
+                    <tr>
+                        <th><label for="">Nhập một câu: </label></th>
+                        <th>
+                            <input type="text" id="sentence" name="sentence" placeholder="Nhập một chuỗi">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><label for="">Số từ trong câu: </label></th>
+                        <th>
+                            <input type="text" style="outline:none; border: none;" id="result" readonly>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" valign=""><button type="button"
+                                onclick="myFunction();">Đếm</button></td>
+                    </tr>
+                </table>
+            </form>
+
+
+        </div>
+    </section>
+    <footer>
+        <h2>BẢN QUYỀN THUỘC VỀ TEST 2</h2>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var str = document.getElementsByTagName('input');
+            var name = str[0].value;
+            if (name == "") {
+                alert("vui long dien ");
+                return 0;
+            }
+            if (!isNaN(name)) {
+                alert(" chuoi ko đc la so");
+            }
+            name = name.trim();
+            name = name.replace(/\s+/g, ' ');
+
+            name = name.split(' ');
+            document.getElementById("result").value = name.length;
+        }
+
+    </script>
+
+</body>
+
+</html>

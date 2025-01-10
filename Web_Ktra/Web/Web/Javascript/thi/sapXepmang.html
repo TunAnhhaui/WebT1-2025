@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <table border="1">
+    <tr>
+        <td colspan="2" align="center">SẮP XẾP MẢNG</td>
+    </tr>
+    <tr>
+        <td>
+            Nhập mảng:
+        </td>
+        <td><input type="text" id="in"></td>
+    </tr>
+    <tr>
+        <td>
+            Mảng sau khi sắp xếp:
+        </td>
+        <td><input type="text" id="out"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button onclick="reset()">Hủy</button>
+            <button onclick="myF()">Sắp xếp</button>
+        </td>
+    </tr>
+   </table> 
+   <script>
+    function myF(){
+        var chan=new Array();
+        var le=new Array();
+        var khong=new Array();
+        var m=0;
+        var n=0;
+        var arr=document.getElementById('in').value;
+        arr=arr.split(",");
+        for(let i=0; i<arr.length; i++){
+            let b=parseInt(arr[i]);
+            if(b==0)khong[0]=0;
+            else{
+                if(b%2==0){
+                    chan[m]=arr[i];
+                    m++;
+                }
+                
+                else{
+                    le[n]=arr[i];
+                    n++;
+                }
+            }
+        }
+        chan.sort();
+        le.concat();
+        arr=arr.splice(0,arr.length);
+        arr=chan.concat(khong,le);
+        document.getElementById('out').value=arr;
+
+    }
+    function reset(){
+        document.getElementById('in').value=" ";
+        document.getElementById('out').value=" ";
+    }
+   </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="nhap">
+        <table border="1" bgcolor=" #656abf " align="center">
+        <caption><h4>Tính tổng dãy số</h4></caption>
+        <tr>
+            <th>Nhập dãy số: </th>
+            <td><input type="text" name="nhapdayso"></td>
+        </tr>
+        <tr>
+            <th>Tính tổng dãy số: </th>
+            <td><input type="text" name="tinhtong"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="reset" value="Hủy">
+                <input type="button" onclick="tinhTong()" value="Tính tổng">
+        </th>
+        </tr>
+    </table></form>
+    
+</body>
+<script>
+    function tinhTong() 
+    {
+        var nhapday = window.document.nhap.nhapdayso.value ; 
+        var arr =  nhapday.split(",");
+        var tong = 0 ;
+        for(var i = 0 ; i < arr.length ; i++)
+        {
+             tong += parseInt(arr[i]);
+        }
+        window.document.nhap.tinhtong.value = tong;
+    }
+</script>
+</html>

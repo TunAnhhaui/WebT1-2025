@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="nhap">
+        <table border="1" bgcolor = #green align="center">
+            <caption><h4>Gía trị trong mảng xuất hiện nhiều nhất</h4></caption>
+            <tr>
+                <th>Nhập mảng: </th>
+                <th><input type="text" name="nhapmang"  size="  30px"></th>
+            </tr>
+            <tr>
+                <th>Kết quả: </th>
+                <th><input type="text" name="kq"  size="  30px"></th>
+            </tr>
+            <tr>
+                <th>Phần tử xuất hiện nhiều nhất: </th>
+                <th><input type="text" name="pt1"  size="  30px" ></th>
+            </tr>
+            <tr>
+                <th>Các phần tử xuất hiện: </th>
+                <th><input type="text" name="pt"  size="  200px" ></th>
+            </tr>
+            
+            <tr>
+                <th colspan="2"> 
+                    <input type="reset" value="Xóa">
+                    <input type="button" value="Check" onclick="check()">
+                    <input type="button" value="Check1" onclick="check1()">
+                    <input type="button" value="Check2" onclick="check2()">
+                </th>
+               
+            </tr>
+        </table>
+
+    </form>
+</body>
+<script>
+    function check() 
+    {
+        var str = window.document.nhap.nhapmang.value ;
+        var dem = 0  ;
+        var tong = 0 ;
+        for(var i = 0 ; i < str.length  ; i++)
+        {   
+            
+            if( tong == str[i].replace(/[^a-zA-Z0-9]/g,' '))
+             { dem = dem + 1 ; }
+     
+        }
+        window.document.nhap.kq .value = dem + 1;
+       
+        
+        
+    }
+
+    function check2() {
+        var str1 = window.document.nhap.nhapmang.value.split(",") ;
+        var dem = {} ;
+        str1.forEach(function (phanTu) {
+        dem[phanTu] = (dem[phanTu] || 0) + 1;
+      });
+        
+        var ketQua = " "; 
+        for (var i in dem) {
+        ketQua += `${i} xuất hiện ${dem[i]} lần ,`;
+      }
+
+      var phanTuMax;
+     var soLanXuatHienMax = 0;
+
+  for (var phanTu in dem) {
+    if (dem[phanTu] > soLanXuatHienMax) {
+        phanTuMax = phanTu;
+      soLanXuatHienMax = dem[phanTu];
+    }
+  }
+
+      window.document.nhap.pt1.value = phanTuMax + " xuất hiện "+ soLanXuatHienMax +" lần";
+        }
+        
+        function check1() {
+        var str1 = window.document.nhap.nhapmang.value.split(",") ;
+        var dem = {} ;
+        str1.forEach(function (phanTu) {
+        dem[phanTu] = (dem[phanTu] || 0) + 1;
+      });
+        
+        var ketQua = " "; 
+        for (var i in dem) {
+        ketQua += `${i} xuất hiện ${dem[i]} lần ,`;
+      }
+      window.document.nhap.pt.value = ketQua;
+    }
+    
+    
+</script>
+</html>

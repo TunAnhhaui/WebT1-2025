@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="nhap">
+        <table border="1" bgcolor=" #656abf" align="center">
+            <caption><h4>Chuẩn hóa xâu</h4></caption>
+            <tr>
+                <th>Nhập xâu 1: </th>
+                <th><input type="text" name="nhapxau1"  size="  50px"></th>
+            </tr>
+            <tr>
+                <th>Nhập xâu 2: </th>
+                <th><input type="text" name="nhapxau2" size="  50px"></th>
+            </tr>
+            
+            <tr>
+                <th>Kết quả: </th>
+                <th><input type="text" name="kq" size="  50px"></th>
+            </tr>
+            <tr>
+                <th colspan="2" >
+                    <input type="reset" value="Xóa">
+                    <input type="button" value="Kiểm tra" onclick="ktra()">
+                </th>
+            </tr>
+        </table>
+    </form> 
+</body>
+<script>
+    function ktra() {
+        var xau1 = window.document.nhap.nhapxau1.value ; 
+        var xau2 = window.document.nhap.nhapxau2.value ; 
+        var xau3 = xau1.split('').sort().join(''); 
+        var xau4 = xau2.split('').sort().join(''); 
+        if(xau3 == xau4 ){
+            window.document.nhap.kq.value = "true" ; 
+        }else {
+            window.document.nhap.kq.value = "false" ; 
+        }
+    }
+</script>
+</html>

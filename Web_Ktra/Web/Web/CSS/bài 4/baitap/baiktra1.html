@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header{
+            display: flex;
+            /* justify-content: space-around; */
+        }
+        #img{
+            width:300px;
+            height:100px;
+        }
+        .header1{
+            padding-left: 300px;
+            padding-top: 50px;
+        }
+        #header2{
+            
+            padding-left: 200px;
+            padding-top: 50px;
+            background-color: #ff3399;
+            color:white;
+           
+        }
+          #header2:hover{
+            background-color: yellow;
+            color:red;
+        } 
+        nav ul{
+            list-style-type: none;
+            background-color: black;
+            display: flex;
+            height: 30px;
+        }
+        nav ul li{
+            padding: 0 50px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color:white;
+            line-height: 30px;
+        }
+        nav ul li:hover{
+            background-color: #ff3399;
+        }
+        .sub-menu{
+            position: absolute;
+            display:none;
+            top: 130px;
+            left:260px;
+        }
+        .menu:hover .sub-menu{
+            display:block ;
+            background-color: white;
+        }
+        .sub-menu li a{
+            color:black;
+        }
+        hr{
+            color:#ff3399;
+        }
+        .content12{
+            display: flex;
+        }
+        .content2{
+            padding-left: 500px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img id="img" src="header.jpg" alt="">
+    <div class="header1">
+        <input type="text" value="Search">
+        <select name="choose" id="choose">
+            <option value="">Cartegories</option>
+            <option value="">Cartegories 2</option>
+            <option value="">Cartegories 3</option>
+            <option value="">Cartegories 4</option>
+        </select>
+    </div>
+    <p id="header2">0 Item($)-$0.00</p>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Women</a></li>
+            <li class="menu"><a href="">Men</a>
+                <ul class="sub-menu">
+                    <li><a href="">Clothing (0)</a></li><hr>
+                    <li><a href="">Coats (0)</a></li>
+                    <li><a href="">T-Shirts (0)</a></li>
+                    <li><a href="">Tennis (0) </a></li>
+                </ul>
+            </li>
+            <li><a href="">Jewelry</a></li>
+            <li><a href="">Books</a></li>
+            <li><a href="">Clothing</a></li>
+            <li><a href="">Jean</a></li>
+            <li><a href="">Accessories</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">The girl racing</a></li>
+        </ul>
+    </nav>
+    <div class="content12">
+        <div class="content1">
+            <i class="fa-solid fa-box"></i>
+            <i class="fa-solid fa-chart-simple"></i>
+            <select name="" id="">
+                <option value="">Default</option>
+                <option value="">Default</option>
+                <option value="">Default</option>
+            </select>
+            <select name="" id="">
+                <option value="">9</option>
+                <option value="">9</option>
+                <option value="">9</option>
+            </select>
+        </div>
+            <div class="content2">
+            <input type="text" value="1">
+            <input type="text" value="2">
+            <input type="text" value="3">
+            <input type="text" value=">">
+            <input type="text" value=">|">
+            </div>
+    </div>
+
+</body>
+</html>

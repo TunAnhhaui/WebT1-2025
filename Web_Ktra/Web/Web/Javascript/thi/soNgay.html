@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Thang:</th>
+            <td><input type="text" id="thang"></td>
+            <th>Nam:</th>
+            <td><input type="text" id="nam"></td>
+        </tr>
+        
+        <tr>
+            <th>Số ngày:</th>
+            <td><input type="text" id="ngay"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="myFuncion2()">
+                    Hiển thị số ngày của tháng
+                </button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function myFuncion2(){
+            var thang =parseInt(document.getElementById("thang").value);
+            var nam =parseInt(document.getElementById("nam").value);
+            var ngay = ngay12(thang,nam);
+            document.getElementById("ngay").value = ngay;
+            
+        }
+        function ngay12(thang,nam){
+            switch(thang){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10: 
+                case 12: return 30;
+                case 4: 
+                case 6: 
+                case 9:  
+                case 11: return 31; 
+                case 2:{
+                    if(nam % 4 == 0) return 29;
+                    else return 28;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
