@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, nav, .aa, .a1{
+    display: flex;
+    justify-content: center;
+}
+
+/*Bg img*/
+main{
+    background-image: url('/Image/images/BT2_01.gif');
+    background-repeat: repeat;
+    height: 888px;
+    background-size: auto;
+}
+
+/*Menu tren*/
+
+.parent{
+    width: 900px;
+    display: flex;  
+    background-color: #f1e8e1;
+}
+.child{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    list-style: none;
+    border-right: 0.5px solid;
+    background: #e8d6ca;
+}
+.child:last-child, .child1:last-child{
+    border: none;
+}
+
+/*Menu trai*/
+h2{
+    width: 900px;
+    background-color: #b14c30;
+}
+.tagp{
+    color: #b14c30;
+}
+.nav{
+    width: 200px;
+    background-color: #b66e1c   ;
+}
+.sp{
+    width: 700px;
+}
+.text{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    background-color: #b66e1c;
+    color: #fff;
+}
+.menu .child-menu{
+    background-color: #7a1410;
+    color: #fff;
+}
+.child1{
+    height: 30px;
+    line-height: 30px;
+    list-style: inside square;
+    padding-left: 10px;
+    border-bottom:0.5px solid #b66e1c;
+}
+.info{
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    padding-left: 20px;
+    margin-left: 5px;
+    background-color: #b66e1c;
+}
+.main1, .sp{
+    background-color: #f3ecda;
+}
+
+/*List san pham*/
+.col1{
+    display: flex;
+    margin: 30px 20px;
+}
+
+/* san pham */
+.sp1{
+    margin-right: 20px;
+    width: 150px;
+}
+.img1{
+    width: 150px;
+}
+.p1, .p2{
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+}
+.p1{
+    background: #d4c8b0;
+}
+.p2{
+    background-color: #c0b3a0;
+}
+.menu1{
+    display: flex;
+    justify-content: center;
+}
+
+/*Menu duoi*/
+
+.ul1{
+    width: 900px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: center ;
+    color: #fff;
+    background-color: #000;
+}
+.li1{
+    list-style: none;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    border-right: 1px solid #fff;
+    padding: 0 10px;
+}
+.li1:last-child{
+    border: none;
+}
+
+/*Footer*/
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+.ft{
+    border: 1px solid #b3885e;
+    width: 900px;
+    height: 80px;
+    padding:  20px 0;
+    text-align: center;
+    background-color: #b4885b;
+}
