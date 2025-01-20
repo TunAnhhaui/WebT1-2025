@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nhập số nguyên: </td>
+            <td><input type="text" id="A"></td>
+        </tr>
+        <tr>
+            <td>Số chữ số lẻ:</td>
+            <td><input type="text" id="kq"></td>
+        </tr>
+        <tr>
+            <td colspan="=2" align="center">
+                <button type="button" onclick="myF()">Đếm</button>
+                <button onclick="reset()">Hủy bỏ</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+       function myF(){
+        var num=document.getElementById('A').value;
+        var arr=num.split('');
+        var dem=0;
+        for(let i of arr){
+            if(i%2==1){
+                dem++;
+            }
+        }
+        var text = " Có " +" " + dem + "số chữ số lẻ:";
+        for(let i of arr){
+            if(i%2==1){
+                text +=i +' ';
+            }
+        }
+        document.getElementById('kq').value=text;
+       }
+    function reset(){
+        document.getElementById('A').value=' ';
+        document.getElementById('kq').value=" ";
+    }
+    </script>
+</body>
+</html>

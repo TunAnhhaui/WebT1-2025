@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="nhap">
+        <table border="1" bgcolor=" #656abf" align="center">
+            <caption><h4>Kiểm tra</h4></caption>
+            <tr>
+                <th>Nhập xâu: </th>
+                <th><input type="text" name="nhapxau"  size="  50px"></th>
+            </tr>
+            <tr>
+                <th>Ký tự 1: </th>
+                <th><input type="text" name="kytu1" size="  50px"></th>
+            </tr>
+            <tr>
+                <th>Ký tự 2: </th>
+                <th><input type="text" name="kytu2"  size="  50px"></th>
+            </tr>
+            <tr>
+                <th>Kết quả: </th>
+                <th><input type="text" name="kq" size="  50px"></th>
+            </tr>
+            <tr>
+                <th colspan="2" >
+                    <input type="reset" value="Xóa">
+                    <input type="button" value="Kiểm tra" onclick="ktra()">
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+
+<script>
+    function ktra(){
+        var nhap = window.document.nhap.nhapxau.value ; 
+         var count = 0 ;
+         var count1 = 0 ;
+        var kyTu1 = window.document.nhap.kytu1.value ; 
+        var kyTu2 = window.document.nhap.kytu2.value ; 
+        for(var i = 0 ; i<= nhap.length ; i++ )
+        {   
+            var checkTrung = nhap.charAt(i) ; 
+            if(checkTrung == kyTu1 ){
+                count ++; 
+            }
+            if(kyTu2 == checkTrung){
+                count1 ++; 
+            }
+        }
+        if (count == count1 ){
+            window.document.nhap.kq.value = kyTu1 + " xuất hiện " + count + "," + kyTu2 + " xuất hiện " + count1 + ", vậy số lượng bằng nhau" ;  
+        }else {
+            window.document.nhap.kq.value = kyTu1 + " xuất hiện " + count + "," + kyTu2 + " xuất hiện " + count1 + ", vậy số lượng ko bằng nhau"; 
+        }
+       
+    }
+</script>
+</html>

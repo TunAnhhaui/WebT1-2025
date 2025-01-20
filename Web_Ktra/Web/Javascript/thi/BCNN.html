@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nhập số thứ nhất</td>
+            <td><input type="text" id="A"></td>
+        </tr>
+        <tr>
+            <td>
+                Nhập số thứ hai:
+            </td>
+            <td><input type="text" id="B"></td>
+        </tr>
+        <tr>
+            <td>BCNN của hai số:</td>
+            <td><input type="text" id="kq"></td>
+        </tr>
+        <tr>
+                <td colspan="2" align="center">
+                    <button onclick="myF()">Tìm</button>
+                <button onclick="reset()">Hủy bỏ</button>
+                </td>
+        </tr>
+    </table>
+    <script>
+        function myF(){
+            var a=document.getElementById('A').value;
+            var b=document.getElementById('B').value;
+            var ucln;
+            var tich=a*b;
+            if(a==0 || b==0){
+                ucln=a+b;
+            }else 
+               while(a!=b){
+                if(a>b) a=a-b;
+                else b=b-a;
+                ucln=a;
+               }
+               document.getElementById('kq').value=tich/ucln;
+            }
+            function reset(){
+            document.getElementById('A').value=' ';
+            document.getElementById('B').value=' ';
+            document.getElementById('kq').value=' ';
+        }
+    </script>
+</body>
+</html>

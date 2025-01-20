@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #fff;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list {
+  width: 1000px;
+  max-width: 100%;
+  display: flex;
+}
+
+.menu-item {
+  padding: 20px;
+  text-align: center;
+  background-color: yellow;
+  flex: 1;
+  border-left: 1px solid #000;
+}
+
+.menu-item:first-child {
+  border: none;
+}

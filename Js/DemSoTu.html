@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đếm Số Từ</title>
+  </head>
+  <body>
+    <h2>Đếm Số Từ Trong Chuỗi</h2>
+    <label for="inputString">Nhập chuỗi:</label>
+    <input
+      id="inputString"
+      rows="4"
+      cols="50"
+      placeholder="Nhập chuỗi cần đếm số từ"
+    ></input>
+    <br /><br />
+    <label for="wordCount">Số từ:</label>
+    <input type="text" id="wordCount" readonly />
+    <br /><br />
+    <button onclick="countWords()">Đếm số từ</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      function countWords() {
+        // Lấy chuỗi người dùng nhập vào
+        const inputString = document.getElementById("inputString").value.trim();
+
+        // Kiểm tra nếu chuỗi rỗng
+        if (inputString === "") {
+          document.getElementById("wordCount").value = "0 từ";
+          return;
+        }
+
+        // Tách chuỗi thành mảng từ bằng cách sử dụng khoảng trắng làm dấu phân cách
+        const words = inputString.split(/\s+/);
+
+        // Đếm số từ
+        const wordCount = words.length;
+
+        // Hiển thị kết quả
+        document.getElementById("wordCount").value = `${wordCount} từ`;
+      }
+
+      function resetForm() {
+        // Xóa chuỗi nhập vào và kết quả
+        document.getElementById("inputString").value = "";
+        document.getElementById("wordCount").value = "";
+      }
+    </script>
+  </body>
+</html>

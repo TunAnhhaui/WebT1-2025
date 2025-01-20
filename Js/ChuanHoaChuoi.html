@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuẩn Hóa Họ và Tên</title>
+  </head>
+  <body>
+    <h2>Chuẩn Hóa Họ và Tên</h2>
+    <label for="fullName">Nhập Họ và Tên:</label>
+    <br />
+    <textarea
+      id="fullName"
+      rows="2"
+      cols="50"
+      placeholder="Nhập họ và tên tại đây"
+    ></textarea>
+    <br /><br />
+    <label for="formattedName">Họ và Tên (sau chuẩn hóa):</label>
+    <input type="text" id="formattedName" readonly />
+    <br /><br />
+    <label for="lastName">Tên:</label>
+    <input type="text" id="lastName" readonly />
+    <br /><br />
+    <button onclick="displayNames()">Hiển thị</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      function displayNames() {
+        // Lấy giá trị chuỗi nhập vào
+        let input = document.getElementById("fullName").value;
+
+        // Loại bỏ các ký tự đặc biệt, giữ lại chữ cái, số, và khoảng trắng
+        const sanitizedInput = input.replace(/[^a-zA-Z\s]/g, "").trim();
+
+        // Chuẩn hóa chuỗi: Loại bỏ khoảng trắng thừa ở giữa và chuyển về dạng chữ thường
+        const formattedName = sanitizedInput.replace(/\s+/g, " ").toLowerCase();
+
+        // Kiểm tra nếu chuỗi trống hoặc không hợp lệ sau khi loại bỏ ký tự đặc biệt
+        if (!formattedName) {
+          document.getElementById("formattedName").value =
+            "Chuỗi không hợp lệ.";
+          document.getElementById("lastName").value = "";
+          return;
+        }
+
+        // Hiển thị Họ và Tên sau chuẩn hóa
+        document.getElementById("formattedName").value = formattedName;
+
+        // Tách và lấy Tên (phần cuối cùng sau dấu cách)
+        const nameParts = formattedName.split(" ");
+        const lastName = nameParts[nameParts.length - 1];
+
+        // Hiển thị Tên riêng
+        document.getElementById("lastName").value = lastName;
+      }
+
+      function resetForm() {
+        // Xóa nội dung nhập và kết quả
+        document.getElementById("fullName").value = "";
+        document.getElementById("formattedName").value = "";
+        document.getElementById("lastName").value = "";
+      }
+    </script>
+  </body>
+</html>

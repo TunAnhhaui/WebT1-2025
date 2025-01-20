@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sắp Xếp Mảng</title>
+  </head>
+  <body>
+    <h2 align="center">SẮP XẾP MẢNG</h2>
+    <table border="1" align="center">
+      <tr>
+        <td>Nhập mảng:</td>
+        <td>
+          <input
+            type="text"
+            id="in"
+            placeholder="Nhập các số, cách nhau dấu ','"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Mảng sau khi sắp xếp:</td>
+        <td><input type="text" id="out" readonly /></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <button onclick="reset()">Hủy</button>
+          <button onclick="sortArray()">Sắp xếp</button>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function sortArray() {
+        const input = document.getElementById("in").value.trim();
+
+        if (!input) {
+          alert("Vui lòng nhập mảng số!");
+          return;
+        }
+
+        // Chuyển chuỗi đầu vào thành mảng số
+        const arr = input.split(",").map((item) => {
+          const num = parseInt(item.trim());
+          if (isNaN(num)) {
+            alert("Vui lòng chỉ nhập các số, cách nhau bằng dấu phẩy!");
+            throw new Error("Dữ liệu không hợp lệ");
+          }
+          return num;
+        });
+
+        // Tách mảng thành số chẵn, số 0, và số lẻ
+        const chan = [];
+        const le = [];
+        const khong = [];
+
+        arr.forEach((num) => {
+          if (num === 0) {
+            khong.push(num);
+          } else if (num % 2 === 0) {
+            chan.push(num);
+          } else {
+            le.push(num);
+          }
+        });
+
+        // Sắp xếp số chẵn tăng dần
+        chan.sort((a, b) => a - b);
+
+        // Kết hợp các mảng chẵn, 0, và lẻ
+        const sortedArray = [...chan, ...khong, ...le];
+
+        // Hiển thị kết quả
+        document.getElementById("out").value = sortedArray.join(", ");
+      }
+
+      function reset() {
+        document.getElementById("in").value = "";
+        document.getElementById("out").value = "";
+      }
+    </script>
+  </body>
+</html>

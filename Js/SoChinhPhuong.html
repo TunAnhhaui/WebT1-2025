@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm Số Chính Phương</title>
+  </head>
+  <body>
+    <h2>Tìm Số Chính Phương Trong Dãy Số</h2>
+    <label for="numberArray">Nhập dãy số (cách nhau bằng dấu ','):</label>
+    <input type="text" id="numberArray" placeholder="Ví dụ: 1, 4, 9, 10, 16" />
+    <br /><br />
+    <label for="perfectSquares">Các số chính phương:</label>
+    <input type="text" id="perfectSquares" readonly />
+    <br /><br />
+    <label for="sumPerfectSquares">Tổng các số chính phương:</label>
+    <input type="text" id="sumPerfectSquares" readonly />
+    <br /><br />
+    <button onclick="findPerfectSquares()">Tìm số chính phương</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      // Hàm kiểm tra số chính phương
+      function isPerfectSquare(num) {
+        if (num < 0) return false; // Không có số chính phương âm
+        const sqrt = Math.sqrt(num);
+        return sqrt === Math.floor(sqrt); // Kiểm tra căn bậc hai là số nguyên
+      }
+
+      // Hàm tìm số chính phương trong dãy số
+      function findPerfectSquares() {
+        // Lấy chuỗi dãy số người dùng nhập vào
+        const input = document.getElementById("numberArray").value.trim();
+
+        // Kiểm tra nếu dãy số rỗng
+        if (input === "") {
+          document.getElementById("perfectSquares").value = "Không có số";
+          document.getElementById("sumPerfectSquares").value = "0";
+          return;
+        }
+
+        // Tách chuỗi thành mảng số
+        const numbers = input.split(",").map((num) => parseInt(num.trim()));
+
+        // Tìm các số chính phương
+        const perfectSquares = numbers.filter((num) => isPerfectSquare(num));
+
+        // Tính tổng các số chính phương
+        const sumPerfectSquares = perfectSquares.reduce(
+          (sum, num) => sum + num,
+          0
+        );
+
+        // Hiển thị kết quả
+        document.getElementById("perfectSquares").value =
+          perfectSquares.length > 0 ? perfectSquares.join(", ") : "Không có số";
+        document.getElementById("sumPerfectSquares").value = sumPerfectSquares;
+      }
+
+      // Hàm xóa dữ liệu
+      function resetForm() {
+        document.getElementById("numberArray").value = "";
+        document.getElementById("perfectSquares").value = "";
+        document.getElementById("sumPerfectSquares").value = "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm Từ Dài Nhất</title>
+  </head>
+  <body>
+    <h2>Tìm Từ Dài Nhất Trong Chuỗi</h2>
+    <label for="inputString">Nhập chuỗi:</label>
+    <textarea
+      id="inputString"
+      rows="4"
+      cols="50"
+      placeholder="Nhập chuỗi cần tìm từ dài nhất"
+    ></textarea>
+    <br /><br />
+    <label for="longestWords">Các từ dài nhất:</label>
+    <input type="text" id="longestWords" readonly />
+    <br /><br />
+    <label for="wordLength">Số ký tự:</label>
+    <input type="text" id="wordLength" readonly />
+    <br /><br />
+    <button onclick="findLongestWords()">Tìm từ dài nhất</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      function findLongestWords() {
+        // Lấy chuỗi người dùng nhập vào
+        const inputString = document.getElementById("inputString").value.trim();
+
+        // Kiểm tra nếu chuỗi rỗng
+        if (inputString === "") {
+          document.getElementById("longestWords").value = "Không có từ";
+          document.getElementById("wordLength").value = "0 ký tự";
+          return;
+        }
+
+        // Tách chuỗi thành mảng từ
+        const words = inputString.split(/\s+/);
+
+        // Tìm độ dài lớn nhất của các từ
+        let maxLength = 0;
+        let longestWords = [];
+
+        for (let word of words) {
+          if (word.length > maxLength) {
+            maxLength = word.length;
+            longestWords = [word]; // Cập nhật danh sách từ dài nhất
+          } else if (word.length === maxLength) {
+            longestWords.push(word); // Thêm từ có độ dài bằng với maxLength
+          }
+        }
+
+        // Hiển thị kết quả
+        document.getElementById("longestWords").value = longestWords.join(", ");
+        document.getElementById("wordLength").value = `${maxLength} ký tự`;
+      }
+
+      function resetForm() {
+        // Xóa chuỗi nhập vào và kết quả
+        document.getElementById("inputString").value = "";
+        document.getElementById("longestWords").value = "";
+        document.getElementById("wordLength").value = "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav ul{
+            width: 300px;
+        }
+        nav ul li{
+            list-style-type: none;
+            background-color: green;
+            line-height: 50px;
+            padding-left: 30px;
+            border-bottom:1px solid black;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color:white;
+        }
+        nav ul li:hover{
+            background-color: yellow;
+        }
+        nav ul li a:hover{
+            color: red;
+        }
+        .sub-menu{
+            position: absolute;
+            top:0px;
+            left:250px;
+            display: none;
+        }
+        .menu{
+            position: relative;
+        }
+        .menu:hover .sub-menu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Võ Quỳnh</a></li>
+            <li class="menu"><a href="">Võ Quỳnh</a>
+            <ul class="sub-menu">
+                <li><a href="">Võ Quỳnh</a></li>
+                <li><a href="">Võ Quỳnh</a></li>
+                <li><a href="">Võ Quỳnh</a></li>
+            </ul>
+            </li>
+            <li><a href="">Võ Quỳnh</a></li>
+            <li><a href="">Võ Quỳnh</a></li>
+            <li><a href="">Võ Quỳnh</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

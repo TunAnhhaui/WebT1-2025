@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function tinh(){
+        var a=document.getElementById("a").value;
+        var b=document.getElementById("b").value;
+        var d,i;
+        for( i=1;i<=a || i<=b;i++){
+            if(a%i==0 && b%i==0){
+                 d=i;
+            }
+            document.getElementById("kq").value=d;
+        }
+    }
+   
+    
+</script>
+<body>
+    
+    
+    <form action="">
+        <table border="1">
+            <th colspan="2">Tìm ước chung lớn nhất</th>
+            <tr>
+                <td>Nhập a:</td>
+                <td><input type="text" id="a"></td>
+            </tr>
+            <tr>
+                <td>Nhập b:</td>
+                <td><input type="text" id="b"></td>
+            </tr>
+            <tr>
+                <td>ước chung lớn nhất:</td>
+                <td><input type="text" id="kq"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Tính" onclick="tinh()"></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

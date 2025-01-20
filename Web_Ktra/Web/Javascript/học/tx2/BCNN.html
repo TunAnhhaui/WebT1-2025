@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính BCNN</title>
+  </head>
+  <body>
+    <h2>Tính Bội Chung Nhỏ Nhất (BCNN)</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <tr>
+        <td>Nhập số thứ nhất:</td>
+        <td><input type="number" id="num1" /></td>
+      </tr>
+      <tr>
+        <td>Nhập số thứ hai:</td>
+        <td><input type="number" id="num2" /></td>
+      </tr>
+      <tr>
+        <td>Kết quả BCNN:</td>
+        <td><input type="text" id="result" readonly /></td>
+      </tr>
+    </table>
+    <br />
+    <button onclick="calculateLCM()">Tính BCNN</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      // Hàm tính ƯCLN (Greatest Common Divisor - GCD)
+      function gcd(a, b) {
+        while (b != 0) {
+          let temp = b;
+          b = a % b;
+          a = temp;
+        }
+        return a;
+      }
+
+      // Hàm tính BCNN
+      function calculateLCM() {
+        const num1 = parseInt(document.getElementById("num1").value);
+        const num2 = parseInt(document.getElementById("num2").value);
+
+        // Kiểm tra đầu vào hợp lệ
+        if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
+          document.getElementById("result").value =
+            "Vui lòng nhập hai số dương.";
+          return;
+        }
+
+        // Tính BCNN
+        const lcm = (num1 * num2) / gcd(num1, num2);
+
+        // Hiển thị kết quả trong ô input
+        document.getElementById("result").value = lcm;
+      }
+
+      // Hàm xóa dữ liệu
+      function resetForm() {
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>

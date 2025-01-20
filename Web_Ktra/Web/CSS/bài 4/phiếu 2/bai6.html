@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            position: relative;
+            top: 0;
+        }
+        header img{
+            width: 100%;
+        }
+        .logo{
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            left: 35%;
+
+        }
+        .logo h1{
+            font-size: 44px;
+        }
+        section{
+            width: 86%;
+            margin-left: 6%;
+            margin-right: 6%;
+            display: block;
+        }
+        nav{
+            width: 100%;
+            z-index: 99;
+        }
+        nav ul{
+            width: 100%;
+            display: flex;
+            padding-left: 4%;
+            padding-right: 4%;
+        }
+        nav ul li{
+            border: .5px solid #fff;
+            width: 10%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            list-style-type: none;
+            text-align: center;
+            background: rgb(118, 250, 255);
+        }
+        nav ul li:hover{
+            background: rgb(27, 190, 196);
+            transition: 0.3s;
+        }
+        .row{
+            position: relative;
+        }
+        .row1{
+            z-index: 9999;
+            position: absolute;
+            top: 100%;
+            left: -5px;
+            display: none;
+        }
+        .row:hover .row1{
+            display: block;
+            transition: 0.3s;
+        }
+        .row1 ul{
+            display: block;
+        }
+        .row1 ul li{
+            width: 200%;
+            list-style-type: circle;
+        }
+        .container-1{
+            width: 100%;
+            display: flex;
+        }
+        .col-1{
+            width: 30%;
+        }
+        .col-1 ul li{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .col-2{
+            width: 70%;
+            display: flex;
+            position: relative;
+        }
+        .col-2 img{
+            width: 35%;
+            height: auto;
+        }
+        .col-2 p{
+            width: 65%;
+            padding-left: 15px;
+            font-size: 18px;
+            line-height: 25px;
+        }
+        footer{
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+    <div class="container">
+        <header>
+            <img src="anh.jpg" alt="">
+            
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li>Trang chủ</li>
+                    <li>Truyện Blog</li>
+                    <li class="row">
+                        Truyện ngắn
+                        <div class="row1">
+                            <ul>
+                                <li>Truyện ngắn về tình yêu</li>
+                                <li>Truyện ngắn về gia đình</li>
+                                <li>Truyện ngắn về bạn bè</li>
+                                <li>Truyện ngắn về đời sống</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>Sách hay</li>
+                    <li>Tâm sự</li>
+                    <li>Tiểu thuyết</li>
+                    <li>Tin tức</li>
+                    <li>Truyện cười</li>
+                    <li>Liên hệ</li>
+                </ul>
+            </nav>
+            <div class="container-1">
+                <div class="col-1">
+                    <h1>Tủ sách</h1>
+                    <ul>
+                        <li>Truyện nổi bật</li>
+                        <li>Truyện mới</li>
+                        <li>Tiểu thuyết mới</li>
+                        <li>Truyện kiếm hiệp mới</li>
+                        <li>Truyện khoa học viễn tưởng</li>
+                        <li>Truyện trinh thám</li>
+                        <li>Góc cười</li>
+                        <li>Góc tâm sự</li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <img src="hoa.jpg" alt="">
+                    
+                    <p>
+                        Truyện kể về giai đoạn mà đời người ai cũng từng trải qua nhưng đối
+                        khi trong cuộc sống bộn bề với cơm áo gạo tiền và những nỗi lo 
+                        không đặt hết tên, chúng ta đã ít nhiều quên mất nó từng tồn tại, đó là: 
+                        Tuổi thơ. Tuổi thơ trong truyện Nguyễn Nhật Ánh không giống như 
+                        bây giờ - khi người ta có nhiều thứ để chơi và nhiều nơi để chọn như
+                        ra công viên nước lướt ván hoặc đắm mình trong các game. Tuổi thơ trong truyện 
+                        Nguyễn Nhật Ánh là khi bạn còn yêu thiên nhiên, khi bạn thấy góc vườn nhà mình sao rộng.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <h5>Bản quyền CNTT_Haui.com</h5>
+        </footer>
+    </div>    
+</body>
+</html>

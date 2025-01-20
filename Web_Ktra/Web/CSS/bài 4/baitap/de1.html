@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        .header{
+            display:flex;
+        }
+        .header1{
+            padding: 0 30px;
+            display: flex;
+        }
+        img{
+            width: 200px;
+            height: 100px;
+        }
+        #hd1{
+            padding-top: 30px;
+            text-align: center;
+        }
+        #hd2{
+            color:green;
+        }
+        .header{
+            color:red;
+        }
+        nav ul{
+            list-style-type: none;
+            background-color: #0066cc;
+            width:300px;
+        }
+        nav ul li{
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid white;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color:white;
+            display:block;
+            padding: 0 30px;
+
+        }
+        nav ul li:hover{
+            background-color: #00ffcc;
+        }
+        .sub-menu{
+            display: none;
+            position: absolute;
+            top:0px;
+            left:101%;
+        
+        }
+        .menu{
+            position: relative;
+        }
+        .menu:hover .sub-menu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header1">
+                <img src="header.jpg" alt="">
+                <div id="hd1">
+                    <h3>PHÒNG KHÁM ĐA KHOA THÁI HÀ</h3>
+                    <p id="hd2"><i>Vì một cộng đồng khỏe mạnh!</i></p>
+                </div>
+            </div>
+            <div class="header1" >
+                <img src="header.jpg" alt="">
+                <div id="hd1">
+                    <h3>CƠ SỞ Y TẾ</h3>
+                    <p>CHẤT LƯỢNG CAO</p>
+                </div>
+            </div>
+            <div class="header1">
+                <img src="header.jpg" alt="">
+                <div id="hd1">
+                    <h3>HOTLINE BÁC SĨ TƯ VẤN</h3>
+                    <p id="hd3">0366.744.499</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="">Giới thiệu</a></li>
+                <li><a href="">Hệ thống bệnh viện</a></li>
+                <li><a href="">Tin tức mới</a></li>
+                <li><a href="">Hướng dẫn</a></li>
+                <li class="menu"><a href="">Gói dịch vụ</a>
+                <ul class="sub-menu">
+                    <li><a href="">Thai sản trọn gói</a></li>
+                    <li><a href="">Gói máu cuống rốn</a></li>
+                    <li><a href="">Thẻ bảo hiểm</a></li>
+                    <li><a href="">Gói chuyên sâu</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

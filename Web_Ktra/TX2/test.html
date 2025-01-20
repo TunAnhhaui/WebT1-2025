@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Đếm số lần xuất hiện của từng phần tử trong mảng</h2>
+  
+    <label for="mangNhapVao">Nhập mảng (cách nhau bằng dấu phẩy): </label>
+    <input type="text" id="mangNhapVao" placeholder="Ví dụ: 1,2,3,4,2,2,3,1,4,5,4">
+  
+    <button onclick="demSoLanXuatHien()">Đếm</button>
+  
+    <p id="ketQua"></p>
+  
+    <script>
+      function demSoLanXuatHien() {
+        let mangNhapVao = document.getElementById('mangNhapVao').value.split(',').map(Number);
+        let dem = {};
+  
+        mangNhapVao.forEach(function (phanTu) {
+          dem[phanTu] = (dem[phanTu] || 0) + 1;
+        });
+  
+        let ketQua = "Kết quả: ";
+        for (let phanTu in dem) {
+          ketQua += `Phần tử ${phanTu} xuất hiện ${dem[phanTu]} lần<br>`;
+        }
+  
+        document.getElementById('ketQua').innerHTML = ketQua;
+      }
+    </script>
+  
+  </body>
+</html>

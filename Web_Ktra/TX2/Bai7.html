@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="nhap">
+        <table border="1" bgcolor=" #656abf" align="center">
+            <caption><h4>Chuẩn hóa xâu</h4></caption>
+            <tr>
+                <th>Nhập xâu ban đầu: </th>
+                <th><input type="text" name="nhapxau"></th>
+            </tr>
+            <tr>
+                <th>Xâu sau khi bỏ ký tự đặc biệt: </th>
+                <th><input type="text" name="inxau"></th>
+            </tr>
+            <tr>
+                <th colspan="2" >
+                    <input type="reset" value="Xóa">
+                    <input type="button"  value="Chuẩn hóa" onclick="chuanHoa()">
+                </th>
+            </tr>
+        </table>
+       </form>
+</body>
+<script>
+    function chuanHoa() {
+        var str = window.document.nhap.nhapxau.value;
+         var in_chuoi = str.replace(/[^a-zA-Z0-9]/g,' ');
+        // var chuoi = str.replace(/[a-zA-Z0-9]/g, '');
+        // window.document.nhap.inxau.value = chuoi;
+        window.document.nhap.inxau.value = in_chuoi;
+    }
+</script>
+</html>

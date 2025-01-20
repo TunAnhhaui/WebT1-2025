@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính Lương Nhân Viên 2023</title>
+  </head>
+  <body>
+    <h2>TÍNH LƯƠNG NHÂN VIÊN 2023</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <tr>
+        <td>Tên nhân viên:</td>
+        <td><input type="text" id="name" /></td>
+      </tr>
+      <tr>
+        <td>Ngày công:</td>
+        <td><input type="number" id="daysWorked" /></td>
+      </tr>
+      <tr>
+        <td>Lương ngày:</td>
+        <td><input type="number" id="dailySalary" /></td>
+      </tr>
+      <tr>
+        <td>Lương tháng:</td>
+        <td><input type="text" id="monthlySalary" readonly /></td>
+      </tr>
+      <tr>
+        <td>Xếp loại nhân viên:</td>
+        <td><input type="text" id="employeeType" readonly /></td>
+      </tr>
+      <tr>
+        <td>Thưởng:</td>
+        <td><input type="text" id="bonus" readonly /></td>
+      </tr>
+      <tr>
+        <td>Thực lĩnh:</td>
+        <td><input type="text" id="totalIncome" readonly /></td>
+      </tr>
+    </table>
+    <br />
+    <button onclick="calculateSalary()">Tính tiền</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      function calculateSalary() {
+        // Lấy giá trị từ input
+        const name = document.getElementById("name").value.trim();
+        const daysWorked = parseInt(
+          document.getElementById("daysWorked").value
+        );
+        const dailySalary = parseFloat(
+          document.getElementById("dailySalary").value
+        );
+
+        // Kiểm tra nhập liệu hợp lệ
+        // if (
+        //   !name ||
+        //   isNaN(daysWorked) ||
+        //   isNaN(dailySalary) ||
+        //   daysWorked <= 0 ||
+        //   dailySalary <= 0
+        // ) {
+        //   alert("Vui lòng nhập đầy đủ và hợp lệ thông tin.");
+        //   return;
+        // }
+
+        // Tính toán lương tháng
+        const monthlySalary = daysWorked * dailySalary;
+
+        // Xác định loại nhân viên và thưởng
+        let employeeType = "";
+        let bonus = 0;
+
+        if (daysWorked > 25) {
+          employeeType = "A";
+          bonus = 500000;
+        } else if (daysWorked >= 20) {
+          employeeType = "B";
+          bonus = 300000;
+        } else {
+          employeeType = "C";
+          bonus = 0;
+        }
+
+        // Tính thực lĩnh
+        const totalIncome = monthlySalary + bonus;
+
+        // Hiển thị kết quả
+        document.getElementById("monthlySalary").value = monthlySalary;
+        document.getElementById("employeeType").value = employeeType;
+        document.getElementById("bonus").value = bonus;
+        document.getElementById("totalIncome").value = totalIncome;
+      }
+
+      function resetForm() {
+        // Xóa toàn bộ dữ liệu nhập
+        document.getElementById("name").value = "";
+        document.getElementById("daysWorked").value = "";
+        document.getElementById("dailySalary").value = "";
+        document.getElementById("monthlySalary").value = "";
+        document.getElementById("employeeType").value = "";
+        document.getElementById("bonus").value = "";
+        document.getElementById("totalIncome").value = "";
+      }
+    </script>
+  </body>
+</html>

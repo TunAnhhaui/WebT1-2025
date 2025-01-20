@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm Số Nguyên Tố</title>
+  </head>
+  <body>
+    <h2>Tìm Số Nguyên Tố Trong Dãy Số</h2>
+    <label for="numberArray">Nhập dãy số (cách nhau bằng dấu ','):</label>
+    <input type="text" id="numberArray" placeholder="Ví dụ: 2, 3, 4, 5, 6, 7" />
+    <br /><br />
+    <label for="primeNumbers">Các số nguyên tố:</label>
+    <input type="text" id="primeNumbers" readonly />
+    <br /><br />
+    <label for="sumPrimeNumbers">Tổng các số nguyên tố:</label>
+    <input type="text" id="sumPrimeNumbers" readonly />
+    <br /><br />
+    <button onclick="findPrimeNumbers()">Tìm số nguyên tố</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      // Hàm kiểm tra số nguyên tố
+      function isPrime(num) {
+        if (num < 2) return false; // Số nhỏ hơn 2 không phải là số nguyên tố
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false; // Nếu chia hết thì không phải số nguyên tố
+          }
+        }
+        return true;
+      }
+
+      // Hàm tìm số nguyên tố trong dãy số
+      function findPrimeNumbers() {
+        // Lấy chuỗi dãy số người dùng nhập vào
+        const input = document.getElementById("numberArray").value.trim();
+
+        // Kiểm tra nếu dãy số rỗng
+        if (input === "") {
+          document.getElementById("primeNumbers").value = "Không có số";
+          document.getElementById("sumPrimeNumbers").value = "0";
+          return;
+        }
+
+        // Tách chuỗi thành mảng số
+        const numbers = input.split(",").map((num) => parseInt(num.trim()));
+
+        // Tìm các số nguyên tố
+        const primeNumbers = numbers.filter((num) => isPrime(num));
+
+        // Tính tổng các số nguyên tố
+        const sumPrimeNumbers = primeNumbers.reduce((sum, num) => sum + num, 0);
+
+        // Hiển thị kết quả
+        document.getElementById("primeNumbers").value =
+          primeNumbers.length > 0 ? primeNumbers.join(", ") : "Không có số";
+        document.getElementById("sumPrimeNumbers").value = sumPrimeNumbers;
+      }
+
+      // Hàm xóa dữ liệu
+      function resetForm() {
+        document.getElementById("numberArray").value = "";
+        document.getElementById("primeNumbers").value = "";
+        document.getElementById("sumPrimeNumbers").value = "";
+      }
+    </script>
+  </body>
+</html>

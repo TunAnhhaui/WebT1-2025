@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính Số Ngày Trong Tháng</title>
+  </head>
+  <body>
+    <h2>Tính Số Ngày Trong Tháng</h2>
+    <label for="month">Nhập tháng (1-12):</label>
+    <input type="number" id="month" min="1" max="12" />
+    <br /><br />
+    <label for="year">Nhập năm:</label>
+    <input type="number" id="year" placeholder="Nhập năm" />
+    <br /><br />
+    <label for="days">Số ngày trong tháng:</label>
+    <input type="text" id="days" readonly />
+    <br /><br />
+    <button onclick="calculateDays()">Tính</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      function calculateDays() {
+        // Lấy giá trị tháng và năm từ người dùng
+        const month = parseInt(document.getElementById("month").value);
+        const year = parseInt(document.getElementById("year").value);
+        const daysInput = document.getElementById("days");
+
+        // Kiểm tra đầu vào hợp lệ
+        if (
+          isNaN(month) ||
+          isNaN(year) ||
+          month < 1 ||
+          month > 12 ||
+          year <= 0
+        ) {
+          daysInput.value = "Vui lòng nhập tháng (1-12) và năm hợp lệ.";
+          return;
+        }
+
+        // Tính số ngày trong tháng
+        const daysInMonth = new Date(year, month, 0).getDate();
+
+        // Hiển thị kết quả
+        daysInput.value = `${daysInMonth} ngày`;
+      }
+
+      function resetForm() {
+        // Xóa toàn bộ dữ liệu nhập và kết quả
+        document.getElementById("month").value = "";
+        document.getElementById("year").value = "";
+        document.getElementById("days").value = "";
+      }
+    </script>
+  </body>
+</html>

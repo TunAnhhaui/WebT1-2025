@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài kiểm tra số 2</title>
+    <style> 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header,
+.footer {
+    background-color: blue;
+    width: 100%;
+    height: 50px;
+    color: white;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    /* flex-direction: row; */
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+}
+
+.main .menu {
+    width: 20%;
+}
+
+.main .menu ul {
+    display: block;
+}
+
+.main .menu ul li {
+    list-style: none;
+    background-color: rgb(172, 35, 49);
+    padding: 10px 0px;
+    /* margin-bottom: 1px; */
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+.main .menu ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.main .menu ul li:hover {
+    background-color: red;
+    transition: 0.4S;
+}
+
+.main .menu ul li:hover a {
+    color: yellow;
+}
+
+.main .menu ul li .sub-menu {
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    top: 0;
+    margin-left: 1px;
+    display: none;
+}
+
+.main .menu ul li:hover .sub-menu {
+    display: block;
+}
+
+.main .register {
+    width: 80%;
+    height: 100%;
+    margin: 10px 10% 0 ;
+    border-radius: 8px;
+    background: blue;
+    color: white;
+}
+
+.main .register form {
+    width: 70%;
+    /* background-color: aqua; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main .register form table {
+    width: 100%;
+    padding: 8px;
+}
+
+.main .register form table tr {
+    /* margin: 25px; */
+}
+
+.main .register form table th.left {
+    width: 30%;
+    text-align: right;
+    padding: 10px;
+}
+
+.main .register form table th.right {
+    width: 70%;
+}
+
+.main .register form table th.right input {
+    width: 100%;
+    padding: 4px 0;
+}
+
+.main .register form table th.gender {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main .register .btn {
+    padding: 5px;
+    cursor: pointer;
+}
+	</style>
+</head>
+
+<body>
+
+    <div class="header">
+        <p>BÀI KIỂM TRA SỐ 2</p>
+    </div>
+    <div class="main">
+        <!-- Menu  -->
+        <div class="menu">
+            <ul>
+                <li><a href="">Lập trình Java</a></li>
+                <li><a href="">Thiết kế web</a>
+                    <ul class="sub-menu">
+                        <li class="sub-item"><a href="">Tài liệu HTML</a></li>
+                        <li class="sub-item"><a href="">Tài liệu CSS</a></li>
+                        <li class="sub-item"><a href="">Tài liệu Javascript</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Lập trình c#</a></li>
+                <li><a href="">Lập trình web</a></li>
+                <li><a href="">Lập trình hướng đối tượng</a></li>
+                <li><a href="">Cơ sở dữ liệu</a></li>
+            </ul>
+        </div>
+
+        <!-- Form register -->
+        <div class="register">
+            <form action="">
+                <table border="0">
+                    <tr>
+                        <th class="left">Họ và tên: </th>
+                        <th class="right"><input type="text" placeholder="Họ tên" id="name"></th>
+                    </tr>
+                    <tr>
+                        <th class="left">Địa chỉ: </th>
+                        <th class="right"><input type="text" placeholder="Địa chỉ" id="address"></th>
+                    </tr>
+                    <tr>
+                        <th class="left">Giới tính: </th>
+                        <th class="right gender">
+                            <label for="">Nam</label> <input type="radio" name="gender_select">
+                            <label for="">Nữ</label> <input type="radio" name="gender_select">
+                            <label for="">Khác</label> <input type="radio" name="gender_select" id="" checked="checked">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="left">Sở thích: </th>
+                        <th class="right gender">
+                            <label for="">Sữa</label> <input type="checkbox" name="hobby" id="">
+                            <label for="">Chè bưởi</label> <input type="checkbox" name="hobby">
+                            <label for="">Phở</label> <input type="checkbox" name="hobby" value="lua-chon-2">
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="button" class="btn" onclick="myFunction()">Kiểm tra</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>BẢN QUYỀN THUỘC VỀ TEST 2</p>
+    </div>
+
+    <script>
+		function myFunction() {
+    const name = document.getElementById('name');
+    const address = document.getElementById('address');
+
+    console.log(FormString(name.value));
+    console.log(FormString(address.value));
+
+    name.value = FormString(name.value);
+    
+}
+
+function FormString(str) {
+    let strNew = str;
+
+    strNew = strNew.trim();     
+    strNew = strNew.toLowerCase();
+    strNew = strNew.replace(/ +/g, ' ');
+
+    let arrWords = strNew.split(' ');
+    strNew = "";
+    for (const word of arrWords) {
+        if (word.trim().length > 0) {
+            let string = word + '';
+            if (string == ',' || string == '.') {
+                // strNew += string;    
+            }
+            else {
+                string = string.charAt(0).toUpperCase() + string.slice(1);
+                strNew += ' ' + string;
+            }
+
+        }
+    }
+
+    strNew = strNew.trim();
+
+    return strNew;
+}
+	</script>
+</body>
+
+</html>

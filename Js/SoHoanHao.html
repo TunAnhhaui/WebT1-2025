@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm Số Hoàn Hảo</title>
+  </head>
+  <body>
+    <h2>Tìm Số Hoàn Hảo Trong Dãy Số</h2>
+    <label for="numberArray">Nhập dãy số (cách nhau bằng dấu ','):</label>
+    <input type="text" id="numberArray" placeholder="Ví dụ: 6,28,12,496" />
+    <br /><br />
+    <label for="perfectNumbers">Các số hoàn hảo:</label>
+    <input type="text" id="perfectNumbers" readonly />
+    <br /><br />
+    <label for="sumPerfectNumbers">Tổng các số hoàn hảo:</label>
+    <input type="text" id="sumPerfectNumbers" readonly />
+    <br /><br />
+    <button onclick="findPerfectNumbers()">Tìm số hoàn hảo</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      // Hàm kiểm tra số hoàn hảo
+      function isPerfectNumber(num) {
+        if (num <= 0) return false;
+
+        let sum = 0;
+        for (let i = 1; i <= num / 2; i++) {
+          if (num % i === 0) {
+            sum += i;
+          }
+        }
+
+        return sum === num;
+      }
+
+      // Hàm tìm số hoàn hảo trong dãy số
+      function findPerfectNumbers() {
+        // Lấy chuỗi dãy số người dùng nhập vào
+        const input = document.getElementById("numberArray").value.trim();
+
+        // Kiểm tra nếu dãy số rỗng
+        if (input === "") {
+          document.getElementById("perfectNumbers").value = "Không có số";
+          document.getElementById("sumPerfectNumbers").value = "0";
+          return;
+        }
+
+        // Tách chuỗi thành mảng số
+        const numbers = input.split(",").map((num) => parseInt(num.trim()));
+
+        // Tìm các số hoàn hảo
+        const perfectNumbers = numbers.filter((num) => isPerfectNumber(num));
+
+        // Tính tổng các số hoàn hảo
+        const sumPerfectNumbers = perfectNumbers.reduce(
+          (sum, num) => sum + num,
+          0
+        );
+
+        // Hiển thị kết quả
+        document.getElementById("perfectNumbers").value =
+          perfectNumbers.length > 0 ? perfectNumbers.join(", ") : "Không có số";
+        document.getElementById("sumPerfectNumbers").value = sumPerfectNumbers;
+      }
+
+      // Hàm xóa dữ liệu
+      function resetForm() {
+        document.getElementById("numberArray").value = "";
+        document.getElementById("perfectNumbers").value = "";
+        document.getElementById("sumPerfectNumbers").value = "";
+      }
+    </script>
+  </body>
+</html>

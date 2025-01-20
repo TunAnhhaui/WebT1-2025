@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đếm Từ Có 4 Ký Tự Bắt Đầu Bằng 'm'</title>
+  </head>
+  <body>
+    <h2>Đếm Từ Có 4 Ký Tự và Bắt Đầu Bằng Chữ 'm'</h2>
+    <label for="inputString">Nhập chuỗi (không quá 255 ký tự):</label>
+    <br />
+    <textarea
+      id="inputString"
+      rows="4"
+      cols="50"
+      maxlength="255"
+      placeholder="Nhập chuỗi của bạn tại đây"
+    ></textarea>
+    <br /><br />
+    <label for="result">Kết quả:</label>
+    <input type="text" id="result" readonly />
+    <br /><br />
+    <button onclick="countWords()">Kiểm tra</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      function countWords() {
+        // Lấy chuỗi người dùng nhập vào
+        const input = document.getElementById("inputString").value.trim();
+
+        // Kiểm tra chuỗi có vượt quá 255 ký tự hay không
+        if (input.length > 255) {
+          document.getElementById("result").value =
+            "Chuỗi không được vượt quá 255 ký tự.";
+          return;
+        }
+
+        // Tách chuỗi thành mảng từ bằng cách dùng khoảng trắng làm dấu phân tách
+        const words = input.split(/\s+/);
+
+        // Đếm số từ có 4 ký tự và bắt đầu bằng chữ 'm'
+        const count = words.filter(
+          (word) => word.length === 4 && word[0].toLowerCase() === "m"
+        ).length;
+
+        // Hiển thị kết quả
+        if (count > 0) {
+          document.getElementById("result").value = `Có ${count} từ thỏa mãn.`;
+        } else {
+          document.getElementById("result").value = "Không có từ thỏa mãn.";
+        }
+      }
+
+      function resetForm() {
+        // Xóa nội dung nhập và kết quả
+        document.getElementById("inputString").value = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>

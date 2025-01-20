@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        header , footer{
+            height:50px;
+            width:100%;
+            background-color: blue;
+            color:white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        h2{
+            padding-top:10px;
+        }
+        nav ul{
+            display: flex;
+            list-style-type: none;
+            height: 40px;
+        }
+        nav ul li{
+            padding: 0 35px;
+            background-color: rgb(29, 162, 97);
+        }
+        nav ul li a{
+            text-decoration: none;
+            color:white;
+            padding: 0 30px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 35px;
+        }
+        nav ul li:hover{
+            background-color: red;
+        }
+        nav ul li a:hover{
+            color:yellow;
+        }
+        .sub-menu{
+            position: absolute;
+            top:90px;
+            left:30x;
+            display: none;
+        }
+        .menu:hover .sub-menu{
+            display: block;
+        }
+        .section{
+            max-width: 1200px;
+    margin: 5px 2% 1% 10%;
+    border-radius: 8px;
+    background: blue;
+    color: white;
+        }
+        .form{
+            width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+        }
+        .form table{
+            width: 100%;
+    padding: 8px;
+        }
+        .left{
+            /* width: 40%;
+    text-align: right; */
+    padding: 10px;
+    
+        }
+        input {
+    width: 100%;
+        }
+        center{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>BÀI KIỂM TRA SỐ 2</h2>
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="">Lập trình Java</a></li>
+                <li class="menu"><a href="">Thiết kế Web</a>
+                  <ul class="sub-menu">
+                    <li><a href="">Tài liệu HTML</a></li>
+                    <li><a href="">Tài liệu CSS</a></li>
+                    <li><a href="">Tài liệu Javascipt</a></li>
+                  </ul>
+                </li>
+                <li><a href="">Lập trình C#</a></li>
+                <li><a href="">Lập trình Web</a></li>
+                <li><a href="">Lập trình hướng đối tượng</a></li>
+                <li><a href="">Cơ sở dữ liệu</a></li>
+            </ul>
+        </nav>
+        <div class=section>
+            <form class="form">
+                <div>
+                    <center>TÍNH TỔNG SỐ HOÀN HẢO</center>
+                </div>
+                <table border="0">
+                    <tr>
+                        <th class="left">Số nguyên n: </th>
+                        <th class="right"><input type="number" placeholder="Nhập số nguyên n" id="number"></th>
+                    </tr>
+                    <tr>
+                        <th class="left">Tổng giá trị các số hoàn hảo <= n: </th>
+                        <th class="right right2""><input type=" text" id="result" readonly>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><button type="button" class="btn" onclick="myFunction()">Tính</button>
+                        </td>
+                    </tr>
+
+                </table>
+        </div>
+        <footer>
+            <h2>BẢN QUYỀN THUỘC VỀ TEST 2</h2>
+        </footer>
+    <script>
+        function myFunction() {
+    const num = document.getElementById('number').value;
+    let sum = 0;
+    console.log(num);
+
+    for (let i = 6; i <= num; i++) {
+        if (check(i)) {
+            sum += i;
+        }
+    }
+
+    document.getElementById('result').value = sum;
+}
+
+function check(n) {
+    let sum = 0;
+    for (let i = 1; i <= n / 2; i++) {
+        if (n % i == 0)
+            sum += i;
+    }
+    if (sum == n) return true; 
+    return false;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Số 1</td>
+            <td> <input type="text" id="num1"> </td>
+        </tr>
+        <tr>
+            <td>Số 2</td>
+            <td> <input type="text" id="num2"> </td>
+        </tr>
+        <tr>
+            <td>BCNN</td>
+            <td> <input type="text" id="bcnn"> </td>
+         </tr>
+        <tr>
+            <td colspan="2">
+                <button onclick="ucln1()">Tìm</button>
+                <button onclick="huy()">huy</button>
+            </td>
+         </tr>
+</table>
+<script>
+   function ucln1(){
+        
+        var a = parseInt(document.getElementById("num1").value);
+        var b = parseInt(document.getElementById("num2").value);
+        var  ucln;
+        var tich=a*b;
+        if(a==0 || b == 0) ucln = a + b;
+        else{
+            while(a != b){
+                if(a > b) a = a - b;
+                else b = b - a;
+            }
+			ucln=a;
+           
+        }
+        document.getElementById("bcnn").value = tich/ucln;
+    } 
+
+    function huy(){
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        document.getElementById("bcnn").value = "";
+    }
+</script> 
+</body>
+</html>

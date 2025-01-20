@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biểu Mẫu Kiểm Tra</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .error {
+        color: red;
+        font-size: 0.9em;
+      }
+      .valid {
+        color: green;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Biểu Mẫu Kiểm Tra</h1>
+    <form id="userForm">
+      <label for="fullName">Họ và Tên:</label><br />
+      <input type="text" id="fullName" name="fullName" required />
+      <div id="fullNameError" class="error"></div>
+      <br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required />
+      <div id="emailError" class="error"></div>
+      <br />
+
+      <label for="phone">Số Điện Thoại:</label><br />
+      <input type="text" id="phone" name="phone" required />
+      <div id="phoneError" class="error"></div>
+      <br />
+
+      <label for="password">Mật Khẩu:</label><br />
+      <input type="password" id="password" name="password" required />
+      <div id="passwordError" class="error"></div>
+      <br />
+    </form>
+
+    <script>
+      // Kiểm tra Họ và Tên
+      document
+        .getElementById("fullName")
+        .addEventListener("input", function () {
+          const fullName = this.value;
+          const fullNameError = document.getElementById("fullNameError");
+          if (/\d/.test(fullName)) {
+            fullNameError.textContent = "Họ và Tên không được chứa số.";
+            fullNameError.className = "error";
+          } else {
+            fullNameError.textContent = "Hợp lệ!";
+            fullNameError.className = "valid";
+          }
+        });
+
+      // Kiểm tra Email
+      document.getElementById("email").addEventListener("input", function () {
+        const email = this.value;
+        const emailError = document.getElementById("emailError");
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          emailError.textContent = "Email không đúng định dạng.";
+          emailError.className = "error";
+        } else {
+          emailError.textContent = "Hợp lệ!";
+          emailError.className = "valid";
+        }
+      });
+
+      // Kiểm tra Số Điện Thoại
+      document.getElementById("phone").addEventListener("input", function () {
+        const phone = this.value;
+        const phoneError = document.getElementById("phoneError");
+        const phoneRegex = /^0\d{9}$/; // Bắt đầu bằng 0 và có đúng 10 số
+        if (!phoneRegex.test(phone)) {
+          phoneError.textContent =
+            "Số Điện Thoại phải bắt đầu bằng số 0 và có đúng 10 số.";
+          phoneError.className = "error";
+        } else {
+          phoneError.textContent = "Hợp lệ!";
+          phoneError.className = "valid";
+        }
+      });
+
+      // Kiểm tra Mật Khẩu
+      document
+        .getElementById("password")
+        .addEventListener("input", function () {
+          const password = this.value;
+          const passwordError = document.getElementById("passwordError");
+          const passwordRegex =
+            /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+          if (!passwordRegex.test(password)) {
+            passwordError.textContent =
+              "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số, và ký tự đặc biệt.";
+            passwordError.className = "error";
+          } else {
+            passwordError.textContent = "Hợp lệ!";
+            passwordError.className = "valid";
+          }
+        });
+    </script>
+  </body>
+</html>
+
+<!--
+^: Bắt đầu chuỗi.
+(?=.*[A-Z]): Yêu cầu phải có ít nhất một chữ cái viết hoa.
+(?=.*[a-z]): Yêu cầu phải có ít nhất một chữ cái viết thường.
+(?=.*\d): Yêu cầu phải có ít nhất một chữ số.
+(?=.*[@$!%*?&]): Yêu cầu phải có ít nhất một ký tự đặc biệt (trong tập @$!%*?&).
+[A-Za-z\d@$!%*?&]{8,}: Toàn bộ mật khẩu phải chỉ chứa các ký tự hợp lệ (chữ cái, số, ký tự đặc biệt) và phải có độ dài tối thiểu 8 ký tự.
+$: Kết thúc chuỗi.
+-->

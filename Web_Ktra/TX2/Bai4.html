@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="nhap">
+        <table border="1" bgcolor=" #656abf " align="center">
+        <caption><h4>Đảo ngược dãy số</h4></caption>
+        <tr>
+            <th>Nhập dãy số: </th>
+            <td><input type="text" name="nhapdayso"></td>
+        </tr>
+        <tr>
+            <th>In dãy đảo ngược: </th>
+            <td><input type="text" name="daodayso"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="reset" value="Hủy">
+                <input type="button" onclick="daoNguoc()" value="Đảo ngược">
+        </th>
+        </tr>
+    </table>
+</form>
+    
+</body>
+<script>
+    function daoNguoc(){
+        var nhapday = window.document.nhap.nhapdayso.value;
+        var arr = nhapday.split(",");
+        var mamngDaoNguoc = arr.reverse();
+        window.document.nhap.daodayso.value = mamngDaoNguoc;
+        
+    }
+</script>
+</html>

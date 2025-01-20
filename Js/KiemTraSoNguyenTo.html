@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm Tra Số Nguyên Tố</title>
+  </head>
+  <body>
+    <h2>Kiểm Tra Số Nguyên Tố</h2>
+    <label for="inputNumber">Nhập số:</label>
+    <input type="number" id="inputNumber" placeholder="Nhập số cần kiểm tra" />
+    <br /><br />
+    <label for="result">Kết quả:</label>
+    <input type="text" id="result" readonly />
+    <br /><br />
+    <button onclick="checkPrime()">Kiểm tra</button>
+    <button onclick="resetForm()">Xóa</button>
+
+    <script>
+      // Hàm kiểm tra số nguyên tố
+      function isPrime(num) {
+        if (num < 2) return false; // Số nhỏ hơn 2 không phải số nguyên tố
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false; // Nếu chia hết thì không phải số nguyên tố
+          }
+        }
+        return true;
+      }
+
+      // Hàm xử lý kiểm tra số nguyên tố
+      function checkPrime() {
+        const input = parseInt(document.getElementById("inputNumber").value);
+
+        // Kiểm tra nếu nhập không hợp lệ
+        if (isNaN(input)) {
+          document.getElementById("result").value = "Vui lòng nhập số hợp lệ.";
+          return;
+        }
+
+        // Kiểm tra số nguyên tố
+        const result = isPrime(input)
+          ? `${input} là số nguyên tố.`
+          : `${input} không phải là số nguyên tố.`;
+
+        // Hiển thị kết quả
+        document.getElementById("result").value = result;
+      }
+
+      // Hàm xóa dữ liệu
+      function resetForm() {
+        document.getElementById("inputNumber").value = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>
